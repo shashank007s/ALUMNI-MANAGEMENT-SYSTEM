@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Alumni Directory</title>
+    <link rel="stylesheet" href="alumni.css">
+</head>
+
+<body onload="loadAlumni()">
+
+<!-- NAVBAR -->
+<div class="navbar">
+    <div class="nav-left">
+        🎓 <span>Alumni Portal</span>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="#" class="active">Alumni Directory</a>
+    </div>
+
+    <div class="nav-right">
+        <span>Welcome, shashank</span>
+        <button onclick="logout()">Logout</button>
+    </div>
+</div>
+
+<!-- HEADER -->
+<div class="header">
+    <div>
+        <h1>Alumni Directory</h1>
+        <p>Search and connect with fellow graduates.</p>
+    </div>
+
+    <div class="actions">
+        <input type="text" placeholder="🔍 Search...">
+        <button class="add-btn" onclick="openModal()">+ Add Alumni</button>
+    </div>
+</div>
+
+<!-- GRID -->
+<div class="grid" id="list"></div>
+
+<!-- MODAL -->
+<div id="modal" class="modal">
+    <div class="modal-box">
+
+        <span class="close" onclick="closeModal()">×</span>
+
+        <h2>Add New Alumni</h2>
+
+        <input id="name" placeholder="Full Name">
+
+        <div class="row">
+            <input id="email" placeholder="Email">
+            <input id="phone" placeholder="Phone">
+        </div>
+
+        <div class="row">
+            <input id="course" placeholder="Course">
+            <input id="passoutYear" placeholder="Year">
+        </div>
+
+        <div class="row">
+            <input id="company" placeholder="Company">
+            <input id="jobRole" placeholder="Role">
+        </div>
+
+        <div class="modal-actions">
+            <button class="cancel" onclick="closeModal()">Cancel</button>
+            <button class="save" onclick="addAlumni()">Add Alumni</button>
+        </div>
+
+    </div>
+</div>
+
+<!-- IMPORTANT -->
+<script src="api.js"></script>
+
+</body>
+</html>

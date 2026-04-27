@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Alumni Dashboard</title>
+    <link rel="stylesheet" href="dashboad.css">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<div class="navbar">
+    <div class="nav-left">
+        🎓 <span class="logo">Alumni Portal</span>
+        <a href="dashboard.html" class="active">Dashboard</a>
+        <a href="alumni.html">Alumni Directory</a>
+    </div>
+
+    <div class="nav-right">
+        Welcome, <b>LPU</b>
+        <button class="logout-btn" onclick="logout()">Logout</button>
+    </div>
+</div>
+
+<!-- MAIN -->
+<div class="dashboard">
+
+    <h1>Dashboard</h1>
+    <p class="subtitle">Overview of our growing alumni network.</p>
+
+    <!-- STATS -->
+    <div class="stats">
+
+        <div class="stat-card">
+            <h3>Total Alumni</h3>
+            <h1>10</h1>
+            <p>Registered graduates</p>
+        </div>
+
+        <div class="stat-card">
+            <h3>Companies</h3>
+            <h1>8</h1>
+            <p>Organizations represented</p>
+        </div>
+
+        <div class="stat-card">
+            <h3>Courses</h3>
+            <h1>7</h1>
+            <p>Academic programs</p>
+        </div>
+
+        <div class="stat-card">
+            <h3>Graduation Years</h3>
+            <h1>9</h1>
+            <p>Years spanning network</p>
+        </div>
+
+    </div>
+
+    <!-- CHART SECTION -->
+    <div class="charts">
+
+        <div class="chart-card">
+            <h3>Graduates over Time</h3>
+            <div class="chart-container">
+                <canvas id="barChart"></canvas>
+            </div>
+        </div>
+
+        <div class="chart-card">
+            <h3>Top Courses</h3>
+            <div class="chart-container">
+                <canvas id="pieChart"></canvas>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- RECENT -->
+    <div class="recent">
+
+        <h3>Recent Additions</h3>
+
+        <div class="user">
+            <div class="avatar">A</div>
+            <div>
+                <b>Aarav Sharma</b>
+                <p>Google</p>
+            </div>
+            <span>2018 • B.Tech</span>
+        </div>
+
+        <div class="user">
+            <div class="avatar">P</div>
+            <div>
+                <b>Priya Iyer</b>
+                <p>Microsoft</p>
+            </div>
+            <span>2019 • B.Tech</span>
+        </div>
+
+        <div class="user">
+            <div class="avatar">R</div>
+            <div>
+                <b>Rahul Verma</b>
+                <p>Goldman Sachs</p>
+            </div>
+            <span>2017 • MBA</span>
+        </div>
+
+    </div>
+
+</div>
+
+<!-- CHART JS -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+/* LOGOUT */
+function logout(){
+    localStorage.removeItem("token");
+    window.location.href = "login.html";
+}
+
+/* BAR CHART */
+new Chart(document.getElementById("barChart"), {
+    type: 'bar',
+    data: {
+        labels: ["2014","2015","2016","2017","2018","2019","2020"],
+        datasets: [{
+            data: [1,1,1,1,1,2,1],
+            backgroundColor: "#0f172a"
+        }]
+    },
+    options:{
+        responsive:true,
+        maintainAspectRatio:false
+    }
+});
+
+/* PIE CHART */
+new Chart(document.getElementById("pieChart"), {
+    type: 'doughnut',
+    data: {
+        labels: ["CSE","Mechanical","Civil","MBA"],
+        datasets: [{
+            data: [40,20,20,20],
+            backgroundColor: ["#0f172a","#facc15","#94a3b8","#fb923c"]
+        }]
+    },
+    options:{
+        responsive:true,
+        maintainAspectRatio:false
+    }
+});
+</script>
+
+</body>
+</html>

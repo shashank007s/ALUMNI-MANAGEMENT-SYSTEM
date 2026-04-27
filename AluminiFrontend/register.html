@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Register - Alumni Portal</title>
+<link rel="stylesheet" href="register.css">
+</head>
+
+<body>
+
+<div class="main-container">
+
+    <!-- LEFT SIDE -->
+    <div class="left">
+
+        <div class="logo">
+            🎓 <span>Alumni Portal</span>
+        </div>
+
+        <div class="card">
+<h2>Create an account</h2>
+    <p class="subtitle">Join the alumni network to connect with graduates</p>
+
+    <input type="text" id="name" placeholder="Full Name">
+    <input type="email" id="email" placeholder="Email">
+    <input type="password" id="password" placeholder="Password">
+
+    <select id="role">
+        <option value="USER">Alumnus / User</option>
+        <option value="ADMIN">Admin</option>
+    </select>
+
+    <button class="register-btn" onclick="register()">Create account</button>
+
+    <p class="login-link">
+        Already have an account?
+        <a href="login.html">Sign in →</a>
+    </p>
+
+
+        </div>
+
+    </div>
+
+    <!-- RIGHT SIDE -->
+    <div class="right">
+
+        <div class="quote-box">
+
+            <p class="quote">
+                "The connections I've made through the alumni network have been invaluable for my career growth and personal development."
+            </p>
+
+            <p class="author">Sarah Jenkins</p>
+            <p class="role">Class of 2015, Product Manager</p>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="api.js"></script>
+
+</body>
+</html>

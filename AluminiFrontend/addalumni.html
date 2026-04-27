@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Alumni Directory</title>
+    <link rel="stylesheet" href="Addalumni.css">
+</head>
+
+<body>
+
+<!-- MODAL -->
+<div id="modal" class="modal">
+    <div class="modal-box">
+
+        <span class="close" onclick="closeModal()">×</span>
+
+        <h2>Add New Alumni</h2>
+        <p>Enter professional details</p>
+
+        <input id="name" placeholder="Full Name">
+        
+        <div class="row">
+            <input id="email" placeholder="Email">
+            <input id="phone" placeholder="Phone">
+        </div>
+
+        <div class="row">
+            <input id="course" placeholder="Course">
+            <input id="year" placeholder="Year">
+        </div>
+
+        <div class="row">
+            <input id="company" placeholder="Company">
+            <input id="role" placeholder="Role">
+        </div>
+
+        <div class="modal-actions">
+            <button class="cancel" onclick="closeModal()">Cancel</button>
+              <button class="save" onclick="addAlumni()">Add Alumni</button>
+        </div>
+
+    </div>
+</div>
+
+<script src="api.js"></script>
+
+</body>
+</html>
